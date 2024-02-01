@@ -21,5 +21,10 @@ def update(request, id):
     pessoa.nome = vnome
     pessoa.save()
     return redirect(home)
+
+def delete(request, id):
+    pessoa = Pessoa.objects.get(id=id)
+    pessoa.delete()
+    return redirect(home)
     
     

@@ -10,4 +10,8 @@ def salvar(request):
     Pessoa.objects.create(nome=vnome)
     pessoas = Pessoa.objects.all()
     return render(request, "index.html", {"pessoas": pessoas})
+
+def editar(request, id):
+    pessoa = Pessoa.objects.get(id=id)
+    return render(request, "update.html", {"pessoa" : pessoa})
     
